@@ -1,0 +1,21 @@
+saltmaster:
+  host: 192.168.50.100
+  user: root
+  passwd: vagrant
+cweb:
+  host: 192.168.50.101
+  user: root
+  passwd: vagrant
+redis:
+  host: 192.168.50.102
+  user: root
+  passwd: vagrant
+uarchive:
+  host: 192.168.50.103
+  user: vagrant
+  passwd: vagrant
+sdev:
+  host: 192.168.50.104
+  user: root
+  passwd: vagrant
+
