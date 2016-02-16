@@ -39,7 +39,7 @@ Instructions
 
    .. code-block:: bash
 
-      vagrant status
+      `vagrant status`
       Current machine states:
       
       saltmaster                running (virtualbox)
