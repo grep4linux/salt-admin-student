@@ -65,7 +65,7 @@ Instructions
 
         vagrant ssh saltmaster
 
-#. The virtual machines change be suspended by running:
+#. The virtual machines can be suspended by running:
 
     .. code-block:: bash
 
@@ -86,9 +86,9 @@ Instructions
 Notes
 =====
 
-Common edits to the ``Vagrantfile``.
+Possible edits to the ``Vagrantfile``.
 
-#. If you want to run through the installation then place a comment ``#`` infront of each line containing ``saltify.sh``.
+#. If you want to perform a manual installation of Salt (the default is to install it) then place a comment ``#`` infront of each line containing ``saltify.sh`` in the file.
 
 #. If you want a master of masters VM then duplicate the ``cweb`` section and replace ``cweb`` with ``mom`` and change the IP address to ``192.168.50.105``.
 
