@@ -25,7 +25,7 @@ Instructions
 
     .. code-block:: bash
 
-        git clone ....
+        git clone https://github.com/grep4linux/salt-admin-student
 
 #. Change to the cloned directory where the Vagrantfile is located and run:
 
