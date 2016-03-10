@@ -43,7 +43,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     cweb_config.vm.provider "virtualbox" do |vb|
        vb.gui = true
        vb.name = "salt_admin_cweb"
-       #vb.memory = 515 
+       vb.memory = 512 
     end
     # --- Define virtual machine ---
     cweb_config.vm.box = "box-cutter/centos65"
@@ -69,7 +69,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     redis_config.vm.provider "virtualbox" do |vb|
        vb.gui = true
        vb.name = "salt_admin_redis"
-       #vb.memory = 515 
+       vb.memory = 512 
     end
     # --- Define virtual machine ---
     redis_config.vm.box = "box-cutter/centos65"
@@ -95,7 +95,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     uarchive_config.vm.provider "virtualbox" do |vb|
        vb.gui = true
        vb.name = "salt_admin_uarchive"
-       #vb.memory = 515 
+       vb.memory = 512
     end
     # --- Define virtual machine ---
     uarchive_config.vm.box = "box-cutter/ubuntu1404"
@@ -118,7 +118,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     sdev_config.vm.provider "virtualbox" do |vb|
        vb.gui = true
        vb.name = "salt_admin_sdev"
-       #vb.memory = 515 
+       vb.memory = 512
     end
     # --- Define virtual machine ---
     #_config.vm.box = "suse/sles11sp3"
