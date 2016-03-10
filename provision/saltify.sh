@@ -59,29 +59,30 @@ function build_salt_master () {
 }
 
 function add_addition_salt_master_setup () {
-  #echoinfo "-- Additional Salt Master Setup --"
+  echoinfo "-- Additional Salt Master Setup --"
   #echoinfo "Installing Additional Salt packages"
   #yum -y install salt*
 
-  echoinfo "Copying setup files"
-  mkdir -p /srv/salt
-  cp -avf ${SRC_DIR}/provision/srv  /
+  #echoinfo "Copying setup files"
+  #mkdir -p /srv/salt
+  #cp -avf ${SRC_DIR}/provision/srv  /
 
   #echoinfo "Extracting instructor files"
   #tar xzvf ${SRC_DIR}/provision/instr_srv.tgz -C /
 
   echoinfo "Extracting class-files"
+  mkdir -p /srv/salt
   tar xzvf ${SRC_DIR}/provision/class-files.tgz -C /srv/salt/
-  #tar xzvf ${SRC_DIR}/provision/class-files.tgz -C /root/
+  tar xzvf ${SRC_DIR}/provision/class-files.tgz -C /root/
 
-  echoinfo "Copying cloud files to state tree"
-  cp -avf ${SRC_DIR}/provision/cloud-ec2  /srv/salt/class-files/
+  #echoinfo "Copying cloud files to state tree"
+  #cp -avf ${SRC_DIR}/provision/cloud-ec2  /srv/salt/class-files/
 
   #echoinfo "Placing roster file"
   #cp -f ${SRC_DIR}/provision/roster /etc/salt/roster
 
-  echoinfo "Performing Salt Highstate..."
-  salt \* state.highstate
+  #echoinfo "Performing Salt Highstate..."
+  #salt \* state.highstate
 }
 
 # Function to build a Salt minion
@@ -103,6 +104,11 @@ function build_salt_minion () {
 function add_salt_minion_setup () {
   echoinfo "Copying class files"
   tar xzvf ${SRC_DIR}/provision/class-files.tgz -C /root/
+  echoinfo "Restarting salt-minion service"
+  service salt-minion stop
+  killall -9 salt-minion
+  sleep 5
+  service salt-minion start
 }
 
 #--- MAIN ------

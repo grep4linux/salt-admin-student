@@ -14,6 +14,7 @@ uarchive:
   host: 192.168.50.103
   user: vagrant
   passwd: vagrant
+  sudo: True
 sdev:
   host: 192.168.50.104
   user: root
