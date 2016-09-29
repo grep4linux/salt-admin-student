@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
        vb.memory = 1024
     end
     # --- Define virtual machine ---
-    saltmaster_config.vm.box = "box-cutter/centos65"
+    saltmaster_config.vm.box = "box-cutter/centos72"
     saltmaster_config.vm.box_check_update = false
     saltmaster_config.vm.host_name = "saltmaster"
 
@@ -46,7 +46,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
        vb.memory = 512 
     end
     # --- Define virtual machine ---
-    cweb_config.vm.box = "box-cutter/centos65"
+    cweb_config.vm.box = "box-cutter/centos72"
     cweb_config.vm.box_check_update = false
     cweb_config.vm.host_name = "cweb"
 
@@ -72,7 +72,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
        vb.memory = 512 
     end
     # --- Define virtual machine ---
-    redis_config.vm.box = "box-cutter/centos65"
+    redis_config.vm.box = "box-cutter/centos72"
     redis_config.vm.box_check_update = false
     redis_config.vm.host_name = "redis"
 
@@ -121,8 +121,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
        vb.memory = 512
     end
     # --- Define virtual machine ---
-    #_config.vm.box = "suse/sles11sp3"
-    sdev_config.vm.box = "box-cutter/centos65"
+    #sdev_config.vm.box = "suse/sles11sp3"
+    sdev_config.vm.box = "box-cutter/centos72"
     sdev_config.vm.box_check_update = false
     sdev_config.vm.host_name = "sdev"
 
