@@ -122,7 +122,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
     # --- Define virtual machine ---
     #sdev_config.vm.box = "suse/sles11sp3"
-    sdev_config.vm.box = "box-cutter/centos72"
+    #sdev_config.vm.box = "box-cutter/centos72"
+    sdev_config.vm.box = "opensuse/openSUSE-42.1-x86_64"
     sdev_config.vm.box_check_update = false
     sdev_config.vm.host_name = "sdev"
 

@@ -1,10 +1,13 @@
 #!/bin/bash
 
+# author: Raine Curtis (rcurtis@saltstack.com)
+# version: 20161114-1
+# description: install salt on a Linux system
+
 # Global variables
 SRC_DIR="/vagrant"
 
 # Start of utility functions
-
 function show_header () {
   MSG="${1}"
   echo "-----------------------------------------------------"
@@ -12,12 +15,17 @@ function show_header () {
   echo "-----------------------------------------------------"
 }
 
+# show error message
 function echoerror() {  
     printf "${RC} * ERROR${EC}: %s\n" "$@" 1>&2;
-}                                                                                                                           
+}              
+
+# show info message
 function echoinfo() { 
     printf "${GC} ########## *  INFO${EC}: %s ########## \n" "$@"; 
-}                                                                                                                           
+}
+
+# show warning message
 echowarn() {           
     printf "${YC} *  WARN${EC}: %s\n" "$@";
 } 
@@ -36,9 +44,8 @@ __detect_color_support() {
         BC=""   
         YC=""  
         EC="" 
-    fi                                                                                                                      
+    fi             
 }                                                                                                                           
-
 # Function to build Salt master
 function build_salt_master () {
   show_header "Installing Salt Master"
@@ -58,31 +65,12 @@ function build_salt_master () {
   ${CUR_BOOTSTRAP} -M
 }
 
+# Additional Salt master options
 function add_addition_salt_master_setup () {
   echoinfo "-- Additional Salt Master Setup --"
-  #echoinfo "Installing Additional Salt packages"
-  #yum -y install salt*
-
-  #echoinfo "Copying setup files"
-  #mkdir -p /srv/salt
-  #cp -avf ${SRC_DIR}/provision/srv  /
-
-  #echoinfo "Extracting instructor files"
-  #tar xzvf ${SRC_DIR}/provision/instr_srv.tgz -C /
-
-  echoinfo "Extracting class-files"
   mkdir -p /srv/salt
-  tar xzvf ${SRC_DIR}/provision/class-files.tgz -C /srv/salt/
-  tar xzvf ${SRC_DIR}/provision/class-files.tgz -C /root/
-
-  #echoinfo "Copying cloud files to state tree"
-  #cp -avf ${SRC_DIR}/provision/cloud-ec2  /srv/salt/class-files/
-
-  #echoinfo "Placing roster file"
-  #cp -f ${SRC_DIR}/provision/roster /etc/salt/roster
-
-  #echoinfo "Performing Salt Highstate..."
-  #salt \* state.highstate
+  echoinfo "-- Copy class files -- "
+  cp -af /vagrant/provision/class-files /root/
 }
 
 # Function to build a Salt minion
@@ -102,16 +90,14 @@ function build_salt_minion () {
 }
 
 function add_salt_minion_setup () {
-  echoinfo "Copying class files"
-  tar xzvf ${SRC_DIR}/provision/class-files.tgz -C /root/
-  echoinfo "Restarting salt-minion service"
-  service salt-minion stop
-  killall -9 salt-minion
-  sleep 5
-  service salt-minion start
+  echo
+  #echoinfo "Restarting salt-minion service"
+  #service salt-minion stop
+  #sleep 5
+  #service salt-minion start
 }
 
-#--- MAIN ------
+#--- MAIN start of execution ------
 _COLORS=${BS_COLORS:-$(tput colors 2>/dev/null || echo 0)}   
 __detect_color_support 
 

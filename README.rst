@@ -1,13 +1,15 @@
 ====================================================
-Student Setup of Fundamentals of Salt Administration
+Student Lab Environment for Salt Administration I
 ====================================================
 
 SaltStack Training Services
 ===========================
 
-This project is to duplicate the student environment used in the SaltStack Fundamentals of Salt Administration course so that labs can be practiced after the course.
+This project is to duplicate the student environment used in the SaltStack Sadministration I course so that labs can be practiced after the course.
 
-There are a couple of differences from the setup during the class. For example, the vagrant project installs the Salt master and all minions so you can skip the first lab. Also, the Salt cloud configuration is not implemented since all VMs are running local. The ``sdev`` system is running CentOS and not SUSE.
+There are a couple of differences from the setup during the class. The Salt cloud configuration is not implemented since all VMs are running local. 
+
+.. The ``sdev`` system is running CentOS and not SUSE.
 
 Requirements
 ============
@@ -51,9 +53,6 @@ Instructions
       This environment represents multiple VMs. The VMs are all listed
       above with their current state. For more information about a specific
       VM, run `vagrant status NAME`.
-
-
-
 
 #. You can login to the sytems through each VirtualBox console or you can log using vagrant. 
 
