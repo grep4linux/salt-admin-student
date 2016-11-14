@@ -9,7 +9,7 @@ This project is to duplicate the student environment used in the SaltStack Sadmi
 
 There are a couple of differences from the setup during the class. The Salt cloud configuration is not implemented since all VMs are running local. 
 
-.. The ``sdev`` system is running CentOS and not SUSE.
+While there should not be any problems, SaltStack or any contributors of this project are not responsible for any negative impact to your environment. Use at your own risk.
 
 Requirements
 ============
